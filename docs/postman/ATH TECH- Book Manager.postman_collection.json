@@ -1,0 +1,519 @@
+{
+  "info": {
+    "_postman_id": "d0ed1be6-ca70-4dcf-80ed-2dc9fb8c4a54",
+    "name": "ATH TECH: Book Manager",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36353511"
+  },
+  "item": [
+    {
+      "name": "Books",
+      "item": [
+        {
+          "name": "Analytics",
+          "item": [
+            {
+              "name": "Analytics Category Distribution",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/books/analytics/category-distribution",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "books",
+                    "analytics",
+                    "category-distribution"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Analytics Author Timeline",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/books/analytics/author-timeline/1",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "books",
+                    "analytics",
+                    "author-timeline",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Analytics Geographic Distribution",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/books/analytics/geographic-distribution",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "books",
+                    "analytics",
+                    "geographic-distribution"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Get All Books",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/books",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "books"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Books",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/books/search",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "books",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "title",
+                  "value": "My Book",
+                  "description": "Title of the book",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "category",
+                  "value": "fantasy",
+                  "description": "Category of the book",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "publishDate",
+                  "value": "2026-08-25",
+                  "description": "Publish date of the book",
+                  "disabled": true
+                },
+                {
+                  "key": "numberOfPages",
+                  "value": "500",
+                  "description": "The number of pages of the book",
+                  "disabled": true
+                },
+                {
+                  "key": "authorName",
+                  "value": "John",
+                  "description": "Author of book (first name or last name or full name)",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Book by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/books/3",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "books",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Book",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Forwarded-For",
+                "value": "{{greekIp}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"My Book 2\", // Required, Max Length: 100\n    \"category\": \"Fantasy\", // Required, Max Length: 80\n    \"publishDate\": \"2025-08-25\", // Required, LocalDate (yyyy-MM-dd)\n    \"numberOfPages\": 100, // Nullable\n    \"authorId\": 1 // Required,\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/books",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "books"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Book by ID",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Clean Code\", // Required, Max Length: 100\n    \"category\": \"Technology\", // Required, Max Length: 80\n    \"publishDate\": \"2024-08-20\", // Required, LocalDate (yyyy-MM-dd)\n    \"numberOfPages\": 500, // Nullable\n    \"authorId\": 1 // Required\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/books/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "books",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Book by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Forwarded-For",
+                "value": "{{greekIp}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/books/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "books",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Authors",
+      "item": [
+        {
+          "name": "Get Authors",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/authors",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authors"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Author by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/authors/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authors",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Author",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Forwarded-For",
+                "value": "{{greekIp}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\": \"John\", // Required, Max Lenght: 50\n    \"lastName\": \"Doe\", // Required, Max Length: 50\n    \"country\": \"Greece\" // Required, Max Length: 50\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/authors",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authors"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Author by ID",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\": \"Alicia\", // Required, Max Lenght: 50\n    \"lastName\": \"Doe\", // Required, Max Length: 50\n    \"country\": \"Greece\" // Required, Max Length: 50\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/authors/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authors",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Author by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Forwarded-For",
+                "value": "{{greekIp}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/authors/3",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authors",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Parse the JSON response\r",
+                  "const response = pm.response.json();\r",
+                  "\r",
+                  "// Save the token as a collection variable\r",
+                  "pm.collectionVariables.set(\"authToken\", response.data.token);\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"{{password}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "auth": {
+        "type": "noauth"
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{authToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
+    },
+    {
+      "key": "email",
+      "value": ""
+    },
+    {
+      "key": "password",
+      "value": ""
+    },
+    {
+      "key": "authToken",
+      "value": ""
+    },
+    {
+      "key": "greekIp",
+      "value": ""
+    },
+    {
+      "key": "ukIp",
+      "value": ""
+    }
+  ]
+}

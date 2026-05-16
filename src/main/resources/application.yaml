@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: Book Manager
+
+app:
+  jwt:
+    secret: ssPVR4ckBGUqoBUr5dGqcDJSqDvQSas0gIYQxfAkrSE= # Generate using `openssl rand -base64 32`
